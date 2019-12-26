@@ -8,8 +8,8 @@ MAX_STEER = 10
 DEFAULT_CONTROL_TIME_SECONDS = 0.1
 
 class Controller():
-    def __init__(self, token):
-        self._remote = Remote(token)
+    def __init__(self):
+        self._remote = Remote()
 
     FORWARD = 1
     REVERSE = -1
@@ -42,8 +42,12 @@ class Controller():
 
     def getDistance(self):
         json_data = self._remote.subscribe(Distance_Vpin)
-        return float(json_data[0])
+        if json_data:
+            return float(json_data[0])
+        return False
 
     def getHeading(self):
         json_data = self._remote.subscribe(Heading_Vpin)
-        return float(json_data[0])
+        if json_data:
+            return float(json_data[0])
+        return False

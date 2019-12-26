@@ -1,9 +1,7 @@
 from idl_controller.controller import Controller
 
-TOKEN = "xfT1Wz7ju6nZAfGhFxyGktFFLVCpGtxO"
-
 def main():
-    controller = Controller(TOKEN)
+    controller = Controller()
     # print("Driving straight for 4 seconds...")
     # controller.driveStraight(4)
     # print("Stopping for 3 seconds...")

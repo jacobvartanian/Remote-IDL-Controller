@@ -1,16 +1,21 @@
 import requests
 import json
 
-SERVER = "iot.nortcele.win"
-PORT = "8080"
-
 HTTP_STATUS_SUCCESS = 200
 
+BLYNK_DATA_FILE = "blynk_data.json"
+
 class Remote():
-    def __init__(self, token, server = SERVER, port = PORT):
-        self._server = server
-        self._port = port
-        self._token = token
+    def __init__(self):
+        try:
+            with open(BLYNK_DATA_FILE, "rb") as fp:
+                blynk_data = json.load(fp)
+            self._server = blynk_data["server"]
+            self._port = blynk_data["port"]
+            self._token = blynk_data["token"]
+        except FileNotFoundError:
+            print("ERROR: Blynk configuration file, \"{0}\" could not be found".format(BLYNK_DATA_FILE))
+            exit(-1)
 
     def publish(self, pin, value):
         url = "http://{0}:{1}/{2}/update/{3}?value={4}".format(self._server, self._port, self._token, pin, value)
