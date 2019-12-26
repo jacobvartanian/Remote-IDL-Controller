@@ -7,7 +7,7 @@ setup(
     name="IDL_Controller", 
     version="00.00.001",
     author="Jacob Vartanian",
-    author_email="jacob.vartanian@ust.edu.au",
+    author_email="jacob.vartanian@uts.edu.au",
     description="Python remote controller for UTS IOT Data Logger (IDL)",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,6 +18,6 @@ setup(
     ],
     python_requires='>=3.5',
     install_requires=[
-        'requests'
+        'blynkapi'
     ]
 )
