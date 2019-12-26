@@ -41,9 +41,9 @@ class Controller():
         return self._remote.publish(MobilitySpeed_Vpin, speed) and self._remote.publish(MobilitySteer_Vpin, steer)
 
     def getDistance(self):
-        # TODO implement this
-        return False
+        json_data = self._remote.subscribe(Distance_Vpin)
+        return float(json_data[0])
 
     def getHeading(self):
-        # TODO implement this
-        return False
+        json_data = self._remote.subscribe(Heading_Vpin)
+        return float(json_data[0])

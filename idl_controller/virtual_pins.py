@@ -14,7 +14,8 @@ TempTimeout_Vpin        = "V12"
 TempShowNow_Vpin        = "V13"
 Distance_Vpin           = "V14"
 JoystickInput_Vpin      = "V15"
-# V16 - V17 Spare
+Heading_Vpin            = "V16"
+# V17 Spare
 SwitchA_Vpin            = "V18"
 SwitchB_Vpin            = "V19"
 PushPeriod_Vpin         = "V20"
