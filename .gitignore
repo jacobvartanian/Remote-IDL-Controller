@@ -1,2 +1,4 @@
-blynk_data.json
 .vscode
+__pycache__
+*.pyc
+blynk_data.json
