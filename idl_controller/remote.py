@@ -18,6 +18,12 @@ class Remote():
             exit(-1)
 
     def publish(self, pin, value):
+        """Publishes a value to a virtual pin on the blynk server through a http request
+
+        Keyword arguments:
+        pin -- The virtual pin to publish to as a string
+        value -- The value to publish to that virtual pin
+        """
         url = "http://{0}:{1}/{2}/update/{3}?value={4}".format(self._server, self._port, self._token, pin, value)
         print(url)
         if requests.get(url).status_code == HTTP_STATUS_SUCCESS:
@@ -25,6 +31,13 @@ class Remote():
         return False
 
     def subscribe(self, pin):
+        """Returns a value from a virtual pin
+
+        Keyword arguments:
+        pin -- The virtual pin to publish to as a string
+        
+        Returns: a JSON object returned from that virtual pin.
+        """
         url = "http://{0}:{1}/{2}/get/{3}".format(self._server, self._port, self._token, pin)
         value = None
         data = requests.get(url)
