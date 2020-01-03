@@ -13,40 +13,46 @@ class Controller():
 
     FORWARD = 1
     REVERSE = -1
-    def driveStraight(self, control_time = DEFAULT_CONTROL_TIME_SECONDS, direction = FORWARD, speed = MAX_SPEED):
+    def driveStraight(self, control_time = None, direction = FORWARD, speed = MAX_SPEED):
         """Moves the device in a straight line for a given time before stopping
 
         Note: This function is BLOCKING
 
         Keyword arguments:
-        control_time -- How long to move the device for before stopping.
+        control_time -- How long to move the device for before stopping. If None (default),
+        this function will be non-blocking and the device will not stop
         direction -- FORWARD or REVERSE (note: you may need to type "Controller." before the keyword)
         speed -- How fast to move the device (maximum = 57)
         """
         if direction in [self.FORWARD, self.REVERSE]:
             drive_success = self.setDrive(direction * speed, 0)
-            time.sleep(control_time)
-            stop_success = self.stop()
+            stop_success = True
+            if control_time:
+                time.sleep(control_time)
+                stop_success = self.stop()
             return drive_success and stop_success
         return False
 
     # TODO Verify this with hardware
     CLOCKWISE = 1
     COUNTER_CLOCKWISE = -1
-    def turn(self, control_time = DEFAULT_CONTROL_TIME_SECONDS, direction = CLOCKWISE, speed = MAX_SPEED):
+    def turn(self, control_time = None, direction = CLOCKWISE, speed = MAX_SPEED):
         """Turns the device on the spot for a given time before stopping
 
         Note: This function is BLOCKING
 
         Keyword arguments:
-        control_time -- How long to move the device for before stopping.
+        control_time -- How long to move the device for before stopping. If None (default),
+        this function will be non-blocking and the device will not stop
         direction -- CLOCKWISE or COUNTER_CLOCKWISE (note: you may need to type "Controller." before the keyword)
         speed -- How fast to move the device (maximum = 57)
         """
         if direction in [self.CLOCKWISE, self.COUNTER_CLOCKWISE]:
             drive_success = self.setDrive(direction * speed, MAX_STEER)
-            time.sleep(control_time)
-            stop_success = self.stop()
+            stop_success = True
+            if control_time:
+                time.sleep(control_time)
+                stop_success = self.stop()
             return drive_success and stop_success
         return False
     
@@ -102,3 +108,7 @@ class Controller():
         if json_data:
             return float(json_data[0])
         return False
+    
+    def delayMilliseconds(self, delay):
+        time.sleep(delay / 1000)
+        return True
