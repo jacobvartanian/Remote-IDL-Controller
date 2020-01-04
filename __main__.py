@@ -81,6 +81,7 @@ def mainTutorial():
     while distance > 30:
         distance = controller.getDistance()
         controller.delayMilliseconds(10)
+        print("Distance = {0}".format(distance))
 
     # 3. Stop the motors
     controller.stop()
