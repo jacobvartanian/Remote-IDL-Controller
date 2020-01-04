@@ -109,6 +109,19 @@ class Controller():
             return float(json_data[0])
         return False
     
+    # TODO Extension Activity
+    # Implement your own methods to get and set other values on the IDL
+    # Refer to http://iot.nortcele.win/doc/reference/virtual-pins.html
+    # for further information on what functionality the IDL has
+
+    def delaySeconds(self, delay):
+        """Pause the program for a number of seconds
+        """
+        time.sleep(delay)
+        return True
+    
     def delayMilliseconds(self, delay):
+        """Pause the program for a number of milliseconds
+        """
         time.sleep(delay / 1000)
         return True

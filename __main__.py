@@ -1,6 +1,10 @@
 """
 This is the main python file that will run when you execute the program.
 
+This is to be used with the UTS MIDL (Mobile IOT Data Logger)
+
+Further information for reference can be found at http://iot.nortcele.win/doc/
+
 Here, you will add your code to control your device. Follow the instructions
 beginning with a '#' symbol. Any line with this symbol at the start of it
 indicates it is an internal comment and will not interfere with the program.
@@ -10,7 +14,7 @@ code here.
 
 Make sure you SAVE regularly and backup your code online before you log out.
 
-WARNING: FILES SAVED LOCALLY MAY BE DELETED AUTOMATICALLY WHEN YOU LOG OUT
+WARNING: FILES SAVED LOCALLY ON UTS COMPUTERS MAY BE DELETED AUTOMATICALLY WHEN YOU LOG OUT
 """
 
 # We need to import the code from the idl_controller package so we can access its functions
