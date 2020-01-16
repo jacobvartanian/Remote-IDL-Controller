@@ -1,0 +1,8 @@
+// 1. Add your blynk token and server details below
+// 2. Rename this file as blynk_data.json
+// 3. Delete these comments
+{
+    "token" : "<BLYNK-TOKEN>",
+    "server" : "<BLYNK-SERVER-ADDRESS>",
+    "port" : "<BLYNK-SERVER-PORT>"
+}
