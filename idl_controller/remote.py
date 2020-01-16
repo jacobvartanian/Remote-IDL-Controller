@@ -5,7 +5,8 @@ HTTP_STATUS_SUCCESS = 200
 
 BLYNK_DATA_FILE = "blynk_data.json"
 
-class Remote():
+
+class Remote:
     def __init__(self):
         try:
             with open(BLYNK_DATA_FILE, "rb") as fp:
@@ -25,7 +26,6 @@ class Remote():
         value -- The value to publish to that virtual pin
         """
         url = "http://{0}:{1}/{2}/update/{3}?value={4}".format(self._server, self._port, self._token, pin, value)
-        print(url)
         if requests.get(url).status_code == HTTP_STATUS_SUCCESS:
             return True
         return False
