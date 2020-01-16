@@ -20,6 +20,6 @@ Open the file [\_\_main\_\_.py](__main__.py) and follow the instructions in the 
 
 Test your code on your device. Make sure all the sensors are correctly connected and the device has power.
 
-Draw a system flow chart to design the path your device will follow and implement this in code. You will use this flow chart as part of your presentation.
+Draw a [system flow chart](https://www.programiz.com/article/flowchart-programming) to design the path your device will follow and implement this in code. You will use this flow chart as part of your presentation.
 
 **Extension task:** Once you are familiar with the basic commands to move your device utilising feedback from the sensors, expand the file [controller.py](idl_controller/controller.py) to give your python code access to other inputs and outputs on your device.
